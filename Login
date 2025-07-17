@@ -1,0 +1,28 @@
+cursos = {
+    1: "Python",
+    2: "Java",
+    3: "JavaScript",
+    4: "C#"
+}
+def menu():
+    print("\n== CURSOS ==")
+    for chave, valor in cursos.items():
+        print(f"{chave} - {valor}")
+    print("0 - Sair")
+def selecionar_curso():  
+    while True:
+     menu()
+     try:
+        opção =int(input("Digite o número relacionado ao seu curso: "))
+     except ValueError:
+      print("Numero escolhido inválido")
+      continue
+
+     if opção == 0:
+        print("Saindo...")
+        break
+     elif opção in cursos:
+            print(f"Curso selecionado: {cursos[opção]}")
+     else:
+            print("Opção inválida.")
+selecionar_curso()
