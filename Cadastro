@@ -1,7 +1,14 @@
+def Erro_Dado(mensagem):
+    while True:
+        try:
+            return int(input(mensagem))
+        except ValueError:
+            print("Insira corretamente ")
+
 dados = {
     "Nome": input("Insira seu nome: "),
-    "Matrícula": int(input("Insira sua matrícula: ")),
-    "Idade": int(input("Insira sua idade: "))
+    "Matrícula": Erro_Dado("Insira sua matrícula: "),
+    "Idade": Erro_Dado("Insira sua idade: ")
 }
 
 cursos = {
@@ -42,12 +49,17 @@ def selecionar_curso():
 curso_final = selecionar_curso()
 
 def mostrar_dados(dados,curso):
-    print("== Dados Do Usuário ==")
+    print("\n== Dados Do Usuário ==")
     print(f"Nome: {dados["Nome"]}")
     print(f"Matrícula: {dados["Matrícula"]}")
     print(f"Idade: {dados["Idade"]}")
     if curso:
         print(f"Curso escolhido : {curso}")
+    else:
+        print("Nenhum curso foi selecionado.")
+
+mostrar_dados(dados,curso_final)
+
     else:
         print("Nenhum curso foi selecionado.")
 
