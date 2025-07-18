@@ -1,15 +1,24 @@
+dados = {
+    "Nome": input("Insira seu nome: "),
+    "Matrícula": int(input("Insira sua matrícula: ")),
+    "Idade": int(input("Insira sua idade: "))
+}
+
 cursos = {
     1: "Python",
     2: "Java",
     3: "JavaScript",
     4: "C#"
 }
+
 def menu():
     print("\n== CURSOS ==")
     for chave, valor in cursos.items():
         print(f"{chave} - {valor}")
     print("0 - Sair")
+
 def selecionar_curso():  
+    curso_selecionado = None
     while True:
      menu()
      try:
@@ -22,7 +31,24 @@ def selecionar_curso():
         print("Saindo...")
         break
      elif opção in cursos:
-            print(f"Curso selecionado: {cursos[opção]}")
+            curso_selecionado = cursos[opção]
+
+            print(f"Curso selecionado: {curso_selecionado}")
      else:
             print("Opção inválida.")
-selecionar_curso()
+    
+    return curso_selecionado
+
+curso_final = selecionar_curso()
+
+def mostrar_dados(dados,curso):
+    print("== Dados Do Usuário ==")
+    print(f"Nome: {dados["Nome"]}")
+    print(f"Matrícula: {dados["Matrícula"]}")
+    print(f"Idade: {dados["Idade"]}")
+    if curso:
+        print(f"Curso escolhido : {curso}")
+    else:
+        print("Nenhum curso foi selecionado.")
+
+mostrar_dados(dados,curso_final)
