@@ -60,7 +60,3 @@ def mostrar_dados(dados,curso):
 
 mostrar_dados(dados,curso_final)
 
-    else:
-        print("Nenhum curso foi selecionado.")
-
-mostrar_dados(dados,curso_final)
