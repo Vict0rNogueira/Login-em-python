@@ -50,9 +50,9 @@ curso_final = selecionar_curso()
 
 def mostrar_dados(dados,curso):
     print("\n== Dados Do Usuário ==")
-    print(f"Nome: {dados["Nome"]}")
-    print(f"Matrícula: {dados["Matrícula"]}")
-    print(f"Idade: {dados["Idade"]}")
+    print(f"Nome: {dados['Nome']}")
+    print(f"Matrícula: {dados['Matrícula']}")
+    print(f"Idade: {dados['Idade']}")
     if curso:
         print(f"Curso escolhido : {curso}")
     else:
